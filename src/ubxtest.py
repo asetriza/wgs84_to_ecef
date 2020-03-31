@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 
 def main():
     gpgga = []
-    f = open("ubxfile.ubx", "r", encoding="latin-1")
+    f = open("src/ubxfile.ubx", "r", encoding="latin-1")
     a = f.read()
     s = a.split("\n")
     for i in s:
@@ -42,15 +42,15 @@ def convert(main):
 
 x_list, y_list, z_list = convert(main())
 
-# fig = plt.figure()
-# ax = fig.add_subplot(111, projection="3d")
-# ax.scatter(x_list, y_list, z_list, c="r", marker="o")
+fig = plt.figure()
+ax = fig.add_subplot(111, projection="3d")
+ax.scatter(x_list, y_list, z_list, c="r", marker="o")
 
-# ax.set_xlabel("x axis")
-# ax.set_ylabel("y axis")
-# ax.set_zlabel("z axis")
+ax.set_xlabel("x axis")
+ax.set_ylabel("y axis")
+ax.set_zlabel("z axis")
 
-# plt.show()
+plt.show()
 
 
 import pyproj
